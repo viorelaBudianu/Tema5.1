@@ -42,7 +42,7 @@ namespace School
             {
                 if (value <= 0)
                 {
-                    throw new ArgumentNullException("Number of lectures cannot be negative or zero!");
+                    throw new ArgumentNullException("Number of lectures should not be negative or 0");
                 }
                 else
                 {
