@@ -10,6 +10,7 @@ namespace School
         private List<Teachers> teachers;
         private string classID;
         public string comment { get; set; }
+        internal List<string> classesUnique=new List<string>();
 
         // Constructor
         public Class(List<Students> students, List<Teachers> teachers, string classID)
@@ -46,7 +47,17 @@ namespace School
                 }
                 else
                 {
-                    this.classID = value;
+                    //we need to check if the introduced value doesn't exists
+                    if(classesUnique.Contains(value))
+                        {
+                           throw new ArgumentNullException("Please provide another ClassID. It is not Unique");    
+                        }
+                    else
+                        {
+                            this.classID = value;
+                        }
+
+                    
                 }
             }
         }
